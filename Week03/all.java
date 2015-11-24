@@ -1,0 +1,1075 @@
+/* 
+ * Exercise 1
+ * Description : True or Fales - Boolean Expressions ... 
+ * Mike Twohig
+ */
+
+public class Ex1PartA {
+	public static void main(String[] args) {
+		System.out.print("2*3=6 ? ");
+		// check first simple boolean expression
+		if ( 2*3==6 )
+			System.out.println("True");
+		else
+			System.out.println("False");
+		
+		System.out.print("4*12-8 not equal to 44 ? ");
+		// check 2nd boolean expression with bracket notation and negation
+		if ( (4*12-8)!=44 ) 
+			System.out.println("True");
+		else
+			System.out.println("False");
+		System.out.print("4*5-12=12 ? ");
+		// similar to previous without negation - test eqaulity
+		if ( (4*5-12)==12 )
+			System.out.println("True");
+		else
+			System.out.println("False");
+		System.out.print("(21+7) / 4 >= 3%2 + 6 ? ");
+		// more complicated expression using the mod operator (evenly divides)
+		// and brackets 
+		if ( ((21+7)/4) >= (3%2 + 6) )
+			System.out.println("True");
+		else
+			System.out.println("False");
+		}
+	
+	}
+/* 
+ * Exercise 2A
+ * Description : Multiple of 3 ... 
+ * Mike Twohig
+ */
+
+import java.util.Scanner;
+
+public class Ex2PartA {
+	public static void main(String[] args) {
+		// Read in number from the user
+		System.out.println("Please Enter a Number");
+    		Scanner sc = new Scanner(System.in);
+		int mynum=sc.nextInt();
+		// Check if the number is a multiple of 3
+		if ( mynum%3==0 )
+			System.out.println("This number is a muliple of 3");
+		else
+			System.out.println("This number is a not muliple of 3");
+		}	
+	}
+/* 
+ * Exercise 2B
+ * Description : Assending Order ...
+ * Mike Twohig
+*/
+
+import java.util.Scanner;
+
+public class Ex2PartB {
+	public static void main(String[] args) {
+		// Read in two numbers from the user
+		System.out.println("Please Enter two Numbers");
+    		Scanner sc = new Scanner(System.in);
+		int firstNum=sc.nextInt();
+		int secondNum=sc.nextInt();
+		// Print in Assending order
+		// If the two numbers are equal it will just print out the two numbers
+		if (firstNum<=secondNum)
+			System.out.println(firstNum + " " + secondNum);
+		else
+			System.out.println(secondNum + " " + firstNum);
+		}	
+	}
+/* 
+ * Exercise 3A
+ * Description : 24 Hour Clock ... 
+ * Mike Twohig
+ */
+
+import java.util.Scanner;
+
+public class Ex3PartA {
+	public static void main(String[] args) {
+		// Get the time
+		System.out.println("Please enter the Time : hours followed by minutes");
+    		Scanner sc = new Scanner(System.in);
+		int hours=sc.nextInt();
+		int mins=sc.nextInt();
+		// Only Execute if the hour/minute values are valid
+		if (( ( hours<24 && hours>=0 ) ) && ( ( mins>=0 ) && ( mins<60 ) )) {
+			// Check for Noon and Midnight first
+			if (( hours==12 ) && ( mins==0 ))
+				System.out.println("Noon");
+			else if (( hours == 0 ) && ( mins==0 ))
+				System.out.println("Midnight");
+			// Check for AM/PM based on hours
+			else if ( hours < 12 )
+				System.out.println(hours + ":" + mins + " AM");
+			else
+				System.out.println(hours-12 + ":" + mins + " PM");
+		}
+		else {
+			System.out.println("You need to enter a valid time : Hours followed by Minutes");
+		}
+	}
+}
+/* 
+ * Exercise 3B
+ * Description : Exam Results ... 
+ * Mike Twohig
+ */
+
+import java.util.Scanner;
+
+public class Ex3PartB {
+	public static void main(String[] args) {
+
+		// Read in the Result from the user
+		System.out.println("Please Enter the Exam Result out of 100");
+    		Scanner sc = new Scanner(System.in);
+		int result=sc.nextInt();
+
+		// main Checking for the Award
+		if (( result <=100 ) &&  ( result>=80 ))
+			System.out.println("Distinction");
+		else if (( result <=79 ) && ( result >=65 ))
+			System.out.println("Merit");
+		else if (( result <=64 ) && ( result >=50 )) 
+			System.out.println("Pass");
+		else if (( result <=49 )&& ( result >=0 ))
+			System.out.println("Fail");
+
+		// Error Checking
+		else if ( result < 0 )
+			System.out.println("Need to Enter a grade over 0 to be valid");
+		else
+			System.out.println("Need to Enter a grade under 100 to be valid");
+			
+		}
+	}
+/* 
+ * Exercise 4A
+ * Description : Animal Example ... 
+*/
+
+import java.util.Scanner;
+
+public class Ex4PartA {
+	public static void main(String[] args) {
+		// Read in the Result from the user
+		System.out.println("Please Enter the number of the Chinese Month (0-11)");
+    		Scanner sc = new Scanner(System.in);
+		int result=sc.nextInt();
+		// Decide which month and print appropriately
+		if ((result >= 0) && (result<12)) {
+			switch (result) {
+				case 0:
+					System.out.println("Monkey");
+					break;
+				case 1:
+					System.out.println("Rooster");
+					break;
+				case 2:
+					System.out.println("Dog");
+					break;
+				case 3:
+					System.out.println("Pig");
+					break;
+				case 4:
+					System.out.println("Rat");
+					break;
+				case 5:
+					System.out.println("Ox");
+					break;
+				case 6:
+					System.out.println("Tiger");
+					break;
+				case 7:
+					System.out.println("Rabbit");
+					break;
+				case 8:
+					System.out.println("Dragon");
+					break;
+				case 9:
+					System.out.println("Snake");
+					break;
+				case 10:
+					System.out.println("Horse");
+					break;
+				case 11:
+					System.out.println("Sheep");
+					break;
+			}
+		}
+		// Error Message if it's outside the range
+		else
+			System.out.println("Need to Enter a valid Month (0-11)");
+	}
+}
+
+/* 
+ * Exercise 4A
+ * Description : Animal Example ... 
+*/
+
+import java.util.Scanner;
+
+public class Ex4PartA {
+	public static void main(String[] args) {
+		// Read in the Result from the user
+		System.out.println("Please Enter the number of the Chinese Month (0-11)");
+    		Scanner sc = new Scanner(System.in);
+		int result=sc.nextInt();
+		// Decide which month and print appropriately
+		if ((result >= 0) && (result<12)) {
+			switch (result) {
+				case 0:
+					System.out.println("Monkey");
+					break;
+				case 1:
+					System.out.println("Rooster");
+					break;
+				case 2:
+					System.out.println("Dog");
+					break;
+				case 3:
+					System.out.println("Pig");
+					break;
+				case 4:
+					System.out.println("Rat");
+					break;
+				case 5:
+					System.out.println("Ox");
+					break;
+				case 6:
+					System.out.println("Tiger");
+					break;
+				case 7:
+					System.out.println("Rabbit");
+					break;
+				case 8:
+					System.out.println("Dragon");
+					break;
+				case 9:
+					System.out.println("Snake");
+					break;
+				case 10:
+					System.out.println("Horse");
+					break;
+				case 11:
+					System.out.println("Sheep");
+					break;
+			}
+		}
+		// Error Message if it's outside the range
+		else
+			System.out.println("Need to Enter a valid Month (0-11)");
+	}
+}
+
+all.java: No such file or directory
+/* 
+ * Exercise 1
+ * Description : True or Fales - Boolean Expressions ... 
+ * Mike Twohig
+ */
+
+public class Ex1PartA {
+	public static void main(String[] args) {
+		System.out.print("2*3=6 ? ");
+		// check first simple boolean expression
+		if ( 2*3==6 )
+			System.out.println("True");
+		else
+			System.out.println("False");
+		
+		System.out.print("4*12-8 not equal to 44 ? ");
+		// check 2nd boolean expression with bracket notation and negation
+		if ( (4*12-8)!=44 ) 
+			System.out.println("True");
+		else
+			System.out.println("False");
+		System.out.print("4*5-12=12 ? ");
+		// similar to previous without negation - test eqaulity
+		if ( (4*5-12)==12 )
+			System.out.println("True");
+		else
+			System.out.println("False");
+		System.out.print("(21+7) / 4 >= 3%2 + 6 ? ");
+		// more complicated expression using the mod operator (evenly divides)
+		// and brackets 
+		if ( ((21+7)/4) >= (3%2 + 6) )
+			System.out.println("True");
+		else
+			System.out.println("False");
+		}
+	
+	}
+/* 
+ * Exercise 2A
+ * Description : Multiple of 3 ... 
+ * Mike Twohig
+ */
+
+import java.util.Scanner;
+
+public class Ex2PartA {
+	public static void main(String[] args) {
+		// Read in number from the user
+		System.out.println("Please Enter a Number");
+    		Scanner sc = new Scanner(System.in);
+		int mynum=sc.nextInt();
+		// Check if the number is a multiple of 3
+		if ( mynum%3==0 )
+			System.out.println("This number is a muliple of 3");
+		else
+			System.out.println("This number is a not muliple of 3");
+		}	
+	}
+/* 
+ * Exercise 2B
+ * Description : Assending Order ...
+ * Mike Twohig
+*/
+
+import java.util.Scanner;
+
+public class Ex2PartB {
+	public static void main(String[] args) {
+		// Read in two numbers from the user
+		System.out.println("Please Enter two Numbers");
+    		Scanner sc = new Scanner(System.in);
+		int firstNum=sc.nextInt();
+		int secondNum=sc.nextInt();
+		// Print in Assending order
+		// If the two numbers are equal it will just print out the two numbers
+		if (firstNum<=secondNum)
+			System.out.println(firstNum + " " + secondNum);
+		else
+			System.out.println(secondNum + " " + firstNum);
+		}	
+	}
+/* 
+ * Exercise 3A
+ * Description : 24 Hour Clock ... 
+ * Mike Twohig
+ */
+
+import java.util.Scanner;
+
+public class Ex3PartA {
+	public static void main(String[] args) {
+		// Get the time
+		System.out.println("Please enter the Time : hours followed by minutes");
+    		Scanner sc = new Scanner(System.in);
+		int hours=sc.nextInt();
+		int mins=sc.nextInt();
+		// Only Execute if the hour/minute values are valid
+		if (( ( hours<24 && hours>=0 ) ) && ( ( mins>=0 ) && ( mins<60 ) )) {
+			// Check for Noon and Midnight first
+			if (( hours==12 ) && ( mins==0 ))
+				System.out.println("Noon");
+			else if (( hours == 0 ) && ( mins==0 ))
+				System.out.println("Midnight");
+			// Check for AM/PM based on hours
+			else if ( hours < 12 )
+				System.out.println(hours + ":" + mins + " AM");
+			else
+				System.out.println(hours-12 + ":" + mins + " PM");
+		}
+		else {
+			System.out.println("You need to enter a valid time : Hours followed by Minutes");
+		}
+	}
+}
+/* 
+ * Exercise 3B
+ * Description : Exam Results ... 
+ * Mike Twohig
+ */
+
+import java.util.Scanner;
+
+public class Ex3PartB {
+	public static void main(String[] args) {
+
+		// Read in the Result from the user
+		System.out.println("Please Enter the Exam Result out of 100");
+    		Scanner sc = new Scanner(System.in);
+		int result=sc.nextInt();
+
+		// main Checking for the Award
+		if (( result <=100 ) &&  ( result>=80 ))
+			System.out.println("Distinction");
+		else if (( result <=79 ) && ( result >=65 ))
+			System.out.println("Merit");
+		else if (( result <=64 ) && ( result >=50 )) 
+			System.out.println("Pass");
+		else if (( result <=49 )&& ( result >=0 ))
+			System.out.println("Fail");
+
+		// Error Checking
+		else if ( result < 0 )
+			System.out.println("Need to Enter a grade over 0 to be valid");
+		else
+			System.out.println("Need to Enter a grade under 100 to be valid");
+			
+		}
+	}
+/* 
+ * Exercise 4A
+ * Description : Animal Example ... 
+*/
+
+import java.util.Scanner;
+
+public class Ex4PartA {
+	public static void main(String[] args) {
+		// Read in the Result from the user
+		System.out.println("Please Enter the number of the Chinese Month (0-11)");
+    		Scanner sc = new Scanner(System.in);
+		int result=sc.nextInt();
+		// Decide which month and print appropriately
+		if ((result >= 0) && (result<12)) {
+			switch (result) {
+				case 0:
+					System.out.println("Monkey");
+					break;
+				case 1:
+					System.out.println("Rooster");
+					break;
+				case 2:
+					System.out.println("Dog");
+					break;
+				case 3:
+					System.out.println("Pig");
+					break;
+				case 4:
+					System.out.println("Rat");
+					break;
+				case 5:
+					System.out.println("Ox");
+					break;
+				case 6:
+					System.out.println("Tiger");
+					break;
+				case 7:
+					System.out.println("Rabbit");
+					break;
+				case 8:
+					System.out.println("Dragon");
+					break;
+				case 9:
+					System.out.println("Snake");
+					break;
+				case 10:
+					System.out.println("Horse");
+					break;
+				case 11:
+					System.out.println("Sheep");
+					break;
+			}
+		}
+		// Error Message if it's outside the range
+		else
+			System.out.println("Need to Enter a valid Month (0-11)");
+	}
+}
+
+/* 
+ * Exercise 4A
+ * Description : Animal Example ... 
+*/
+
+import java.util.Scanner;
+
+public class Ex4PartA {
+	public static void main(String[] args) {
+		// Read in the Result from the user
+		System.out.println("Please Enter the number of the Chinese Month (0-11)");
+    		Scanner sc = new Scanner(System.in);
+		int result=sc.nextInt();
+		// Decide which month and print appropriately
+		if ((result >= 0) && (result<12)) {
+			switch (result) {
+				case 0:
+					System.out.println("Monkey");
+					break;
+				case 1:
+					System.out.println("Rooster");
+					break;
+				case 2:
+					System.out.println("Dog");
+					break;
+				case 3:
+					System.out.println("Pig");
+					break;
+				case 4:
+					System.out.println("Rat");
+					break;
+				case 5:
+					System.out.println("Ox");
+					break;
+				case 6:
+					System.out.println("Tiger");
+					break;
+				case 7:
+					System.out.println("Rabbit");
+					break;
+				case 8:
+					System.out.println("Dragon");
+					break;
+				case 9:
+					System.out.println("Snake");
+					break;
+				case 10:
+					System.out.println("Horse");
+					break;
+				case 11:
+					System.out.println("Sheep");
+					break;
+			}
+		}
+		// Error Message if it's outside the range
+		else
+			System.out.println("Need to Enter a valid Month (0-11)");
+	}
+}
+
+all.java: No such file or directory
+/* 
+ * Exercise 1
+ * Description : True or Fales - Boolean Expressions ... 
+ * Mike Twohig
+ */
+
+public class Ex1PartA {
+	public static void main(String[] args) {
+		System.out.print("2*3=6 ? ");
+		// check first simple boolean expression
+		if ( 2*3==6 )
+			System.out.println("True");
+		else
+			System.out.println("False");
+		
+		System.out.print("4*12-8 not equal to 44 ? ");
+		// check 2nd boolean expression with bracket notation and negation
+		if ( (4*12-8)!=44 ) 
+			System.out.println("True");
+		else
+			System.out.println("False");
+		System.out.print("4*5-12=12 ? ");
+		// similar to previous without negation - test eqaulity
+		if ( (4*5-12)==12 )
+			System.out.println("True");
+		else
+			System.out.println("False");
+		System.out.print("(21+7) / 4 >= 3%2 + 6 ? ");
+		// more complicated expression using the mod operator (evenly divides)
+		// and brackets 
+		if ( ((21+7)/4) >= (3%2 + 6) )
+			System.out.println("True");
+		else
+			System.out.println("False");
+		}
+	
+	}
+/* 
+ * Exercise 2A
+ * Description : Multiple of 3 ... 
+ * Mike Twohig
+ */
+
+import java.util.Scanner;
+
+public class Ex2PartA {
+	public static void main(String[] args) {
+		// Read in number from the user
+		System.out.println("Please Enter a Number");
+    		Scanner sc = new Scanner(System.in);
+		int mynum=sc.nextInt();
+		// Check if the number is a multiple of 3
+		if ( mynum%3==0 )
+			System.out.println("This number is a muliple of 3");
+		else
+			System.out.println("This number is a not muliple of 3");
+		}	
+	}
+/* 
+ * Exercise 2B
+ * Description : Assending Order ...
+ * Mike Twohig
+*/
+
+import java.util.Scanner;
+
+public class Ex2PartB {
+	public static void main(String[] args) {
+		// Read in two numbers from the user
+		System.out.println("Please Enter two Numbers");
+    		Scanner sc = new Scanner(System.in);
+		int firstNum=sc.nextInt();
+		int secondNum=sc.nextInt();
+		// Print in Assending order
+		// If the two numbers are equal it will just print out the two numbers
+		if (firstNum<=secondNum)
+			System.out.println(firstNum + " " + secondNum);
+		else
+			System.out.println(secondNum + " " + firstNum);
+		}	
+	}
+/* 
+ * Exercise 3A
+ * Description : 24 Hour Clock ... 
+ * Mike Twohig
+ */
+
+import java.util.Scanner;
+
+public class Ex3PartA {
+	public static void main(String[] args) {
+		// Get the time
+		System.out.println("Please enter the Time : hours followed by minutes");
+    		Scanner sc = new Scanner(System.in);
+		int hours=sc.nextInt();
+		int mins=sc.nextInt();
+		// Only Execute if the hour/minute values are valid
+		if (( ( hours<24 && hours>=0 ) ) && ( ( mins>=0 ) && ( mins<60 ) )) {
+			// Check for Noon and Midnight first
+			if (( hours==12 ) && ( mins==0 ))
+				System.out.println("Noon");
+			else if (( hours == 0 ) && ( mins==0 ))
+				System.out.println("Midnight");
+			// Check for AM/PM based on hours
+			else if ( hours < 12 )
+				System.out.println(hours + ":" + mins + " AM");
+			else
+				System.out.println(hours-12 + ":" + mins + " PM");
+		}
+		else {
+			System.out.println("You need to enter a valid time : Hours followed by Minutes");
+		}
+	}
+}
+/* 
+ * Exercise 3B
+ * Description : Exam Results ... 
+ * Mike Twohig
+ */
+
+import java.util.Scanner;
+
+public class Ex3PartB {
+	public static void main(String[] args) {
+
+		// Read in the Result from the user
+		System.out.println("Please Enter the Exam Result out of 100");
+    		Scanner sc = new Scanner(System.in);
+		int result=sc.nextInt();
+
+		// main Checking for the Award
+		if (( result <=100 ) &&  ( result>=80 ))
+			System.out.println("Distinction");
+		else if (( result <=79 ) && ( result >=65 ))
+			System.out.println("Merit");
+		else if (( result <=64 ) && ( result >=50 )) 
+			System.out.println("Pass");
+		else if (( result <=49 )&& ( result >=0 ))
+			System.out.println("Fail");
+
+		// Error Checking
+		else if ( result < 0 )
+			System.out.println("Need to Enter a grade over 0 to be valid");
+		else
+			System.out.println("Need to Enter a grade under 100 to be valid");
+			
+		}
+	}
+/* 
+ * Exercise 4A
+ * Description : Animal Example ... 
+*/
+
+import java.util.Scanner;
+
+public class Ex4PartA {
+	public static void main(String[] args) {
+		// Read in the Result from the user
+		System.out.println("Please Enter the number of the Chinese Month (0-11)");
+    		Scanner sc = new Scanner(System.in);
+		int result=sc.nextInt();
+		// Decide which month and print appropriately
+		if ((result >= 0) && (result<12)) {
+			switch (result) {
+				case 0:
+					System.out.println("Monkey");
+					break;
+				case 1:
+					System.out.println("Rooster");
+					break;
+				case 2:
+					System.out.println("Dog");
+					break;
+				case 3:
+					System.out.println("Pig");
+					break;
+				case 4:
+					System.out.println("Rat");
+					break;
+				case 5:
+					System.out.println("Ox");
+					break;
+				case 6:
+					System.out.println("Tiger");
+					break;
+				case 7:
+					System.out.println("Rabbit");
+					break;
+				case 8:
+					System.out.println("Dragon");
+					break;
+				case 9:
+					System.out.println("Snake");
+					break;
+				case 10:
+					System.out.println("Horse");
+					break;
+				case 11:
+					System.out.println("Sheep");
+					break;
+			}
+		}
+		// Error Message if it's outside the range
+		else
+			System.out.println("Need to Enter a valid Month (0-11)");
+	}
+}
+
+/* 
+ * Exercise 4A
+ * Description : Animal Example ... 
+*/
+
+import java.util.Scanner;
+
+public class Ex4PartA {
+	public static void main(String[] args) {
+		// Read in the Result from the user
+		System.out.println("Please Enter the number of the Chinese Month (0-11)");
+    		Scanner sc = new Scanner(System.in);
+		int result=sc.nextInt();
+		// Decide which month and print appropriately
+		if ((result >= 0) && (result<12)) {
+			switch (result) {
+				case 0:
+					System.out.println("Monkey");
+					break;
+				case 1:
+					System.out.println("Rooster");
+					break;
+				case 2:
+					System.out.println("Dog");
+					break;
+				case 3:
+					System.out.println("Pig");
+					break;
+				case 4:
+					System.out.println("Rat");
+					break;
+				case 5:
+					System.out.println("Ox");
+					break;
+				case 6:
+					System.out.println("Tiger");
+					break;
+				case 7:
+					System.out.println("Rabbit");
+					break;
+				case 8:
+					System.out.println("Dragon");
+					break;
+				case 9:
+					System.out.println("Snake");
+					break;
+				case 10:
+					System.out.println("Horse");
+					break;
+				case 11:
+					System.out.println("Sheep");
+					break;
+			}
+		}
+		// Error Message if it's outside the range
+		else
+			System.out.println("Need to Enter a valid Month (0-11)");
+	}
+}
+
+all.java: No such file or directory
+/* 
+ * Exercise 1
+ * Description : True or Fales - Boolean Expressions ... 
+ * Mike Twohig
+ */
+
+public class Ex1PartA {
+	public static void main(String[] args) {
+		System.out.print("2*3=6 ? ");
+		// check first simple boolean expression
+		if ( 2*3==6 )
+			System.out.println("True");
+		else
+			System.out.println("False");
+		
+		System.out.print("4*12-8 not equal to 44 ? ");
+		// check 2nd boolean expression with bracket notation and negation
+		if ( (4*12-8)!=44 ) 
+			System.out.println("True");
+		else
+			System.out.println("False");
+		System.out.print("4*5-12=12 ? ");
+		// similar to previous without negation - test eqaulity
+		if ( (4*5-12)==12 )
+			System.out.println("True");
+		else
+			System.out.println("False");
+		System.out.print("(21+7) / 4 >= 3%2 + 6 ? ");
+		// more complicated expression using the mod operator (evenly divides)
+		// and brackets 
+		if ( ((21+7)/4) >= (3%2 + 6) )
+			System.out.println("True");
+		else
+			System.out.println("False");
+		}
+	
+	}
+/* 
+ * Exercise 2A
+ * Description : Multiple of 3 ... 
+ * Mike Twohig
+ */
+
+import java.util.Scanner;
+
+public class Ex2PartA {
+	public static void main(String[] args) {
+		// Read in number from the user
+		System.out.println("Please Enter a Number");
+    		Scanner sc = new Scanner(System.in);
+		int mynum=sc.nextInt();
+		// Check if the number is a multiple of 3
+		if ( mynum%3==0 )
+			System.out.println("This number is a muliple of 3");
+		else
+			System.out.println("This number is a not muliple of 3");
+		}	
+	}
+/* 
+ * Exercise 2B
+ * Description : Assending Order ...
+ * Mike Twohig
+*/
+
+import java.util.Scanner;
+
+public class Ex2PartB {
+	public static void main(String[] args) {
+		// Read in two numbers from the user
+		System.out.println("Please Enter two Numbers");
+    		Scanner sc = new Scanner(System.in);
+		int firstNum=sc.nextInt();
+		int secondNum=sc.nextInt();
+		// Print in Assending order
+		// If the two numbers are equal it will just print out the two numbers
+		if (firstNum<=secondNum)
+			System.out.println(firstNum + " " + secondNum);
+		else
+			System.out.println(secondNum + " " + firstNum);
+		}	
+	}
+/* 
+ * Exercise 3A
+ * Description : 24 Hour Clock ... 
+ * Mike Twohig
+ */
+
+import java.util.Scanner;
+
+public class Ex3PartA {
+	public static void main(String[] args) {
+		// Get the time
+		System.out.println("Please enter the Time : hours followed by minutes");
+    		Scanner sc = new Scanner(System.in);
+		int hours=sc.nextInt();
+		int mins=sc.nextInt();
+		// Only Execute if the hour/minute values are valid
+		if (( ( hours<24 && hours>=0 ) ) && ( ( mins>=0 ) && ( mins<60 ) )) {
+			// Check for Noon and Midnight first
+			if (( hours==12 ) && ( mins==0 ))
+				System.out.println("Noon");
+			else if (( hours == 0 ) && ( mins==0 ))
+				System.out.println("Midnight");
+			// Check for AM/PM based on hours
+			else if ( hours < 12 )
+				System.out.println(hours + ":" + mins + " AM");
+			else
+				System.out.println(hours-12 + ":" + mins + " PM");
+		}
+		else {
+			System.out.println("You need to enter a valid time : Hours followed by Minutes");
+		}
+	}
+}
+/* 
+ * Exercise 3B
+ * Description : Exam Results ... 
+ * Mike Twohig
+ */
+
+import java.util.Scanner;
+
+public class Ex3PartB {
+	public static void main(String[] args) {
+
+		// Read in the Result from the user
+		System.out.println("Please Enter the Exam Result out of 100");
+    		Scanner sc = new Scanner(System.in);
+		int result=sc.nextInt();
+
+		// main Checking for the Award
+		if (( result <=100 ) &&  ( result>=80 ))
+			System.out.println("Distinction");
+		else if (( result <=79 ) && ( result >=65 ))
+			System.out.println("Merit");
+		else if (( result <=64 ) && ( result >=50 )) 
+			System.out.println("Pass");
+		else if (( result <=49 )&& ( result >=0 ))
+			System.out.println("Fail");
+
+		// Error Checking
+		else if ( result < 0 )
+			System.out.println("Need to Enter a grade over 0 to be valid");
+		else
+			System.out.println("Need to Enter a grade under 100 to be valid");
+			
+		}
+	}
+/* 
+ * Exercise 4A
+ * Description : Animal Example ... 
+*/
+
+import java.util.Scanner;
+
+public class Ex4PartA {
+	public static void main(String[] args) {
+		// Read in the Result from the user
+		System.out.println("Please Enter the number of the Chinese Month (0-11)");
+    		Scanner sc = new Scanner(System.in);
+		int result=sc.nextInt();
+		// Decide which month and print appropriately
+		if ((result >= 0) && (result<12)) {
+			switch (result) {
+				case 0:
+					System.out.println("Monkey");
+					break;
+				case 1:
+					System.out.println("Rooster");
+					break;
+				case 2:
+					System.out.println("Dog");
+					break;
+				case 3:
+					System.out.println("Pig");
+					break;
+				case 4:
+					System.out.println("Rat");
+					break;
+				case 5:
+					System.out.println("Ox");
+					break;
+				case 6:
+					System.out.println("Tiger");
+					break;
+				case 7:
+					System.out.println("Rabbit");
+					break;
+				case 8:
+					System.out.println("Dragon");
+					break;
+				case 9:
+					System.out.println("Snake");
+					break;
+				case 10:
+					System.out.println("Horse");
+					break;
+				case 11:
+					System.out.println("Sheep");
+					break;
+			}
+		}
+		// Error Message if it's outside the range
+		else
+			System.out.println("Need to Enter a valid Month (0-11)");
+	}
+}
+
+/* 
+ * Exercise 4A
+ * Description : Animal Example ... 
+*/
+
+import java.util.Scanner;
+
+public class Ex4PartA {
+	public static void main(String[] args) {
+		// Read in the Result from the user
+		System.out.println("Please Enter the number of the Chinese Month (0-11)");
+    		Scanner sc = new Scanner(System.in);
+		int result=sc.nextInt();
+		// Decide which month and print appropriately
+		if ((result >= 0) && (result<12)) {
+			switch (result) {
+				case 0:
+					System.out.println("Monkey");
+					break;
+				case 1:
+					System.out.println("Rooster");
+					break;
+				case 2:
+					System.out.println("Dog");
+					break;
+				case 3:
+					System.out.println("Pig");
+					break;
+				case 4:
+					System.out.println("Rat");
+					break;
+				case 5:
+					System.out.println("Ox");
+					break;
+				case 6:
+					System.out.println("Tiger");
+					break;
+				case 7:
+					System.out.println("Rabbit");
+					break;
+				case 8:
+					System.out.println("Dragon");
+					break;
+				case 9:
+					System.out.println("Snake");
+					break;
+				case 10:
+					System.out.println("Horse");
+					break;
+				case 11:
+					System.out.println("Sheep");
+					break;
+			}
+		}
+		// Error Message if it's outside the range
+		else
+			System.out.println("Need to Enter a valid Month (0-11)");
+	}
+}
+
